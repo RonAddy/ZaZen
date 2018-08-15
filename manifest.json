@@ -1,0 +1,12 @@
+{
+  "manifest_version" : 2,
+  "name" : "Zazen",
+  "version" : "0.0.1",
+  "description" : "Zazen, a steated contrentation",
+  "content_scripts" : [
+    {
+      "matches" : ["https://www.google.com/"],
+      "js" : ["./main.js"]
+    } 
+  ]
+}
