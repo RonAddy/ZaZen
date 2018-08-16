@@ -4,7 +4,7 @@
   "version" : "0.0.1",
   "description" : "Zazen, a seated contrentation",
   "background" : {
-    "scripts" : ["./background.js"]
+    "scripts" : ["./background.js", "./index.js"]
   }, 
   "permissions" : [
     "tabs",

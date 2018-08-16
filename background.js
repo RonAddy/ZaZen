@@ -20,7 +20,8 @@ function saveChanges() {
 
 function getChanges() {
   chrome.storage.local.get(['metaHistoryObj'], function(result) {
-    console.log('historyobj currently is ', result.metaHistoryObj);
+    //console.log('historyobj currently is ', result.metaHistoryObj);
+    return result.metaHistoryObj;
   });
 }
 
@@ -47,8 +48,42 @@ function queryTabs(tabs){
     historyObj[parsedURL].count++;
   }
   saveChanges();
-  getChanges();
-  //console.log('history: ', historyObj);
+  //let mHO = getChanges();
+
+  // indexObj
+  chrome.storage.local.get(['metaIndexObj'], function(res) {
+    //console.log('IndexObj: ', result.metaIndexObj);
+    // historyObj
+    chrome.storage.local.get(['metaHistoryObj'], function(result) {
+      //console.log('historyObj', result.metaHistoryObj);
+
+      // iterate through index and history
+      for (let ele in result.metaHistoryObj) {
+	console.log('index: ', res.metaIndexObj);
+	if (res.metaIndexObj.hasOwnProperty(ele)) {
+	  console.log('index has element in history');
+	  if (result.metaHistoryObj[ele].count >= res.metaIndexObj[ele]) {
+	    // when the count of the history matches the index
+	    alert('you have excessed the page limit.');
+	  }
+	}
+      }
+    });
+  });
+
+  // iterating through metaIndexObj
+  /*
+  for (let ele in mIO) {
+    if (mHO.hasOwnProperty(ele) && mHO[ele].count === mIO[ele]) {
+      alert('ITS 4:30 IN THE FUCKING MORNING');
+    }
+  }
+  */
+  //console.log('index: ', mIO);
+  //console.log('history: ', mHO);
 }
 
-//setInterval(() => { checkTabs(); }, 1000);
+setInterval(() => { checkTabs(); }, 1000);
+//console.log(chrome.storage.local.get(['metaIndexObj'], function(result) {
+  //return result.metaIndexObj;
+//}));
