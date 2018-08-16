@@ -1,0 +1,102 @@
+
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+margin: 0;
+padding: 0;
+border: 0;
+font-size: 100%;
+font: inherit;
+vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+display: block;
+}
+
+body {
+  background: #fff;
+  font-size: 14px;
+  line-height: 1.4em;
+  /* -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none; */
+  height: 100%;
+  width: 100%;
+}
+
+
+nav {
+    position: relative;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+nav > h1{
+    flex: 2;
+    margin-right: 10px;
+    margin-top: 12px;
+    color: red;
+    font-size: 2em;
+    padding: 2px;
+}
+
+a {
+    flex: 1;
+    border-radius: 100%;
+}
+
+#img_monk {
+    background-image: url('../images/monk.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    width: 70px;
+    height: 70px;
+    flex: 3;
+    border-bottom: 4px solid red;
+}
+
+.content_header {
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-around;
+}
+
+.content_header h2 {
+    flex: 1;
+}
+
+hr {
+    width: 95%;
+}
+
+.sites {
+    display: flex;
+    justify-content: space-between;
+}
+
+.sites h3 {
+    flex: 1;
+    padding: 3px;
+}
+
+.sites h3:nth-child(2){
+    margin-right: 15px;
+    border: 2px solid red;
+}
+
+/* ////////////// */
+
