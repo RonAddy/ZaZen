@@ -31,4 +31,17 @@ function setChange() {
 }
 
 
+let menu = document.querySelector('a');
+let zen_zone = document.querySelector(".zen_zone");
+
+console.log(zen_zone);
+
+menu.addEventListener('click', () => {
+    console.log(zen_zone.style );
+    if( zen_zone.style.height === ""){
+        console.log('yea?');
+        zen_zone.style.height = "100px";
+    }
+})
+
 setChange();
