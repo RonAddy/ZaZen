@@ -1,25 +1,26 @@
-//let anchor = document.querySelector('a')
+let button = document.querySelector('#submit_1');
 
-//function openMenu() {
-    // document.getElementById("navBar").style.width = "100%";
-    // document.querySelector("div").style.opacity= '.2';
-    // document.querySelector(".sideMenu").style.opacity= '.8';
+let indexObj = { 'facebook.com' : 3, 'reddit.com' :1 };
 
-    //while( anchor.style.height !== 0){
-    //    anchor.style.height--;
-    //}
-//}
+button.addEventListener('click', () => {
+    let val_1 = document.querySelector('#clarityVal_1')
 
-//anchor.addEventListener('click', openMenu);
+    console.log(val_1);
 
+    let val_input = parseInt(val_1.value);
 
-let clarityTarget1 = document.querySelector('input');
-//let clarityTarget1Count = document.querySelector('#clarityTarget1Count')
-//let clarityTarget1Count = document.getElementById('clarityTarget1Count').value;
+    console.log(val_input);
 
-console.log(document);
+    indexObj['reddit.com'] = val_input;
 
-let indexObj = { 'facebook.com' : 3, 'reddit.com' : 2 };
+    setChange();
+
+    chrome.storage.local.get(['metaIndexObj'], function(result) {
+        console.log(result.metaIndexObj);
+        return result.metaIndexObj;
+      });
+})
+
 
 function setChange() {
   chrome.storage.local.set({'metaIndexObj' : indexObj}, function() {
@@ -28,5 +29,6 @@ function setChange() {
     console.log(indexObj);
   });
 }
+
 
 setChange();

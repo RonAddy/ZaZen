@@ -3,9 +3,14 @@
   "name" : "Zazen",
   "version" : "0.0.1",
   "description" : "Zazen, a seated contrentation",
-  "background" : {
-    "scripts" : ["./background.js", "./index.js"]
-  }, 
+  // "background" : {
+  //   "scripts" : ["./background.js"],
+  //   "persistent": false
+  // }, 
+
+  "background": { "page": "background.html" },
+
+
   "permissions" : [
     "tabs",
     "storage"
